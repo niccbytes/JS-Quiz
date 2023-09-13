@@ -6,20 +6,20 @@ const questions = [
 {
   questions : "what is a object?",
   answers:
-  [ { text: "poop", correct: false},{ text: "a collection of properties", correct: true},{ text: "apple", correct: false},{ text: "grape", correct: false}, ]
+  [ { text: "a type of global object that is used to store data", correct: false},{ text: "a collection of properties", correct: true},{ text: "a set of statements that performs a task or calculates a value", correct: false},{ text: "one that can either be TRUE or FALSE", correct: false}, ]
 },
 
 {questions : "what is an array?",
 answers:
-[ { text: "a type of global object that is used to store data.", correct: true},{ text: "a collection of properties", correct: false},{ text: "apple", correct: false},{ text: "grape", correct: false}, ]},
+[ { text: "a type of global object that is used to store data.", correct: true},{ text: "a collection of properties", correct: false},{ text: "one that can either be TRUE or FALSE", correct: false},{ text: "a set of statements that performs a task or calculates a value", correct: false}, ]},
 
 {questions : "what is a boolean?",
 answers:
-[ { text: "poop", correct: false},{ text: "a collection of properties", correct: false},{ text: "apple", correct: false},{ text: "one that can either be TRUE or FALSE", correct: true}, ]},
+[ { text: "a set of statements that performs a task or calculates a value", correct: false},{ text: "a collection of properties", correct: false},{ text: "a object", correct: false},{ text: "one that can either be TRUE or FALSE", correct: true}, ]},
 
 {questions : "what is a function?",
 answers:
-[ { text: "one that can either be TRUE or FALSE", correct: false},{ text: "a collection of properties", correct: false},{ text: "a set of statements that performs a task or calculates a value", correct: true},{ text: "grape", correct: false}, ]}
+[ { text: "one that can either be TRUE or FALSE", correct: false},{ text: "a collection of properties", correct: false},{ text: "a set of statements that performs a task or calculates a value", correct: true},{ text: "a thing in JS that has a pre-set element", correct: false}, ]}
 
 ];
 
