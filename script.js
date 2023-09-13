@@ -26,10 +26,26 @@ answers:
 const questionsElement = document.getElementById("js-Question");
 const answerButton = document.getElementById("answer-choices");
 const nextButton = document.getElementById("nextbtn");
+//for timer and start button
+let timeLeft = document.querySelector(".time-left");
+let count = 11;
+
+
 
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+const timerDisplay = () =>{
+  countdown = setInterval(() =>{
+    count--;
+    timeLeft.innerHTML = `${count}s`;
+    if(count === 0) {
+      clearInterval(countdown);
+      timerDisplay();
+    }
+  }, 1000)
+};
 
 
 
@@ -58,11 +74,13 @@ currentQuestion.answers.forEach(answer => {
   button.innerHTML = answer.text;
   button.classList.add("btn");
   answerButton.appendChild(button);
+
   if(answer.correct){
     button.dataset.correct = answer.correct;
   }
   button.addEventListener("click", selectAnswer)
-});
+}
+);
 
 
 
@@ -117,7 +135,7 @@ function handleNextButton(){
       handleNextButton();
     }else{
       startQuiz();
-    }
+    } 
    })
 
    startQuiz();
