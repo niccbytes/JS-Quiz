@@ -28,32 +28,39 @@ const answerButton = document.getElementById("answer-choices");
 const nextButton = document.getElementById("nextbtn");
 //for timer and start button
 let timeLeft = document.querySelector(".time-left");
-let count = 11;
+let countdown; //declaring the varaible for the timer
 
 
 
 
 let currentQuestionIndex = 0;
 let score = 0;
+// timer count also 
 
 const timerDisplay = () =>{
-  countdown = setInterval(() =>{
+  count = 11;
+  timeLeft.innerHTML = `${count}s`;
+
+ const updateTimer = () =>{
     count--;
     timeLeft.innerHTML = `${count}s`;
-    if(count === 0) {
+
+    if (count === 0) {
       clearInterval(countdown);
-      timerDisplay();
-    }
-  }, 1000)
+     
+    } else {
+      countdown = setTimeout(updateTimer, 1000);
+  }
 };
-
-
+updateTimer();
+};
 
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   nextButton.innerHTML = "Next"
   showQuestion();
+  timerDisplay();
  
 }
 
@@ -64,6 +71,11 @@ function startQuiz() {
 function showQuestion() {
 
   resetState();
+  clearInterval(countdown) // resets the timer when you go to next question
+
+  count = 11;
+  timerDisplay();
+
 
 let currentQuestion = questions[currentQuestionIndex];
 let questionNo = currentQuestionIndex + 1;
@@ -118,6 +130,9 @@ function showScore(){
   questionsElement.innerHTML = `Your got ${score} out of ${questions.length}! `;
   nextButton.innerHTML = "play again?";
   nextButton.style.display = "block";
+  
+clearTimeout(countdown);
+  
 }
 
 
