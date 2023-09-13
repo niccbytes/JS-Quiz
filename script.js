@@ -38,7 +38,11 @@ function startQuiz() {
   score = 0;
   nextButton.innerHTML = "Next"
   showQuestion();
+ 
 }
+
+
+
 
 
 function showQuestion() {
@@ -71,7 +75,7 @@ function resetState(){
   }
 }
 
-function selectAnswer(e){
+function selectAnswer(e) {
   const selectBtn = e.target;
   const isCorrect = selectBtn.dataset.correct === "true";
   if(isCorrect){
@@ -87,8 +91,9 @@ function selectAnswer(e){
     button.disabled = true;
   });
   nextButton.style.display = "block";
+}
 
-   }
+ 
 
 function showScore(){
   resetState();
