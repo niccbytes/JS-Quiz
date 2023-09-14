@@ -56,7 +56,7 @@ let score = 0;
 // timer count also 
 
 const timerDisplay = () =>{
-  count = 11;
+  count = 60;
   timeLeft.innerHTML = `${count}s`;
 
  const updateTimer = () =>{
@@ -91,7 +91,7 @@ function showQuestion() {
   resetState();
   clearInterval(countdown) // resets the timer when you go to next question
 
-  count = 11;
+  count = 60;
   timerDisplay();
 
 
@@ -132,6 +132,11 @@ function selectAnswer(e) {
   }else{
     selectBtn.classList.add("wrong");
   }
+
+  //add decreased time here
+  // Decrement the timer when the answer is wrong
+
+
   Array.from(answerButton.children).forEach(button => {
     if(button.dataset.correct === "true"){
       button.classList.add("correct");
