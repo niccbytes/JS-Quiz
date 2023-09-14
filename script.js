@@ -1,4 +1,22 @@
 
+// Define start screen and quiz screen elements
+const startScreen = document.getElementById("startScreen");
+const quizScreen = document.querySelector(".quiz");
+
+// Hide the quiz screen initially
+quizScreen.style.display = "none";
+
+// Function to start the quiz when the button is clicked
+function startQuizFromStartScreen() {
+  console.log('start button was clicked')
+  startScreen.style.display = "none"; // Hide the start screen
+  quizScreen.style.display = "block"; // Show the quiz screen
+  startQuiz(); // Start the quiz
+}
+
+// Add click event listener to the Start Quiz button
+const startButton = document.getElementById("startButton");
+startButton.addEventListener("click", startQuizFromStartScreen);
 
 
 
@@ -152,5 +170,7 @@ function handleNextButton(){
       startQuiz();
     } 
    })
+
+
 
    startQuiz();

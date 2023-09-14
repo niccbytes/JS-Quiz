@@ -5,6 +5,9 @@
   box-sizing: border-box;
 }
 
+
+
+
 body {
   background-color: rgb(133, 156, 231);
 }
@@ -16,6 +19,7 @@ body {
   margin: 100px auto 0;
   border-radius: 10px;
   padding: 30px;
+  text-align: center;
 }
 
 .app h1 {
@@ -26,9 +30,36 @@ body {
   padding-bottom: 30px;
 }
 
+.start-screen {
+  background: white;
+  color: black;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #222;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 4px;
+  border-color: rgb(149, 91, 241);
+  
+}
+
+#startButton {
+  background-color: rgb(149, 91, 241);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 4px;
+  
+}
+
 .quiz {
   padding: 20px 0;
-  
+  display: none;
 
 }
 
