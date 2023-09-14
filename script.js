@@ -56,21 +56,20 @@ let score = 0;
 // timer count also 
 
 const timerDisplay = () =>{
-  count = 60;
+  
   timeLeft.innerHTML = `${count}s`;
 
  const updateTimer = () =>{
-    count--;
+    count;
     timeLeft.innerHTML = `${count}s`;
 
-    if (count === 0) {
+    if (count <= 0) {
       clearInterval(countdown);
-     
-    } else {
-      countdown = setTimeout(updateTimer, 1000);
-  }
+      timeLeft.innerHTML = '0s';
+    } 
 };
-updateTimer();
+
+countdown = setInterval(updateTimer, 60000);
 };
 
 function startQuiz() {
@@ -92,6 +91,7 @@ function showQuestion() {
   clearInterval(countdown) // resets the timer when you go to next question
 
   count = 60;
+
   timerDisplay();
 
 
@@ -126,16 +126,14 @@ function resetState(){
 function selectAnswer(e) {
   const selectBtn = e.target;
   const isCorrect = selectBtn.dataset.correct === "true";
+
   if(isCorrect){
     selectBtn.classList.add("correct");
     score++;
   }else{
     selectBtn.classList.add("wrong");
+    decrementTimer(10); //call this
   }
-
-  //add decreased time here
-  // Decrement the timer when the answer is wrong
-
 
   Array.from(answerButton.children).forEach(button => {
     if(button.dataset.correct === "true"){
@@ -146,6 +144,14 @@ function selectAnswer(e) {
   nextButton.style.display = "block";
 }
 
+// decrease time
+function decrementTimer(amount) {
+  count -= amount;
+  if (count < 0) {
+    count = 0
+  }
+  timerDisplay(); //update display
+}
  
 
 function showScore(){
