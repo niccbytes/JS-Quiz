@@ -134,3 +134,44 @@ justify-content: space-between;
 padding: 10px 10px;
 
 }
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.quiz {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#highScores {
+  text-align: center;
+}
+
+#highScoresList {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#initials {
+  width: 50px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#submitScore {
+  font-size: 16px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

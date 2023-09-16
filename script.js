@@ -44,6 +44,10 @@ answers:
 const questionsElement = document.getElementById("js-Question");
 const answerButton = document.getElementById("answer-choices");
 const nextButton = document.getElementById("nextbtn");
+const highScores = []; //for the highsores issa array
+
+
+
 //for timer and start button
 let timeLeft = document.querySelector(".time-left");
 let countdown; //declaring the varaible for the timer
@@ -157,12 +161,43 @@ function decrementTimer(amount) {
 function showScore(){
   resetState();
   questionsElement.innerHTML = `Your got ${score} out of ${questions.length}! `;
+  const initials = prompt('Enter your initials:')
+if (initials) {
+  const userScore = { initials, score};
+  highScores.push(userScore);
+  displayHighScore();
+}
+
   nextButton.innerHTML = "play again?";
   nextButton.style.display = "block";
   
 clearTimeout(countdown);
   
 }
+
+function displayHighScores() {
+  // Sort high scores by score in descending order
+  highScores.sort((a, b) => b.score - a.score);
+
+  // Display high scores to the user
+  let highScoresText = "<h2>High Scores</h2>";
+  for (let i = 0; i < highScores.length; i++) {
+    highScoresText += `<p>${highScores[i].initials}: ${highScores[i].score}</p>`;
+  }
+
+  // Display high scores on the quiz screen
+  questionsElement.innerHTML = highScoresText;
+
+  const javascriptCode = document.getElementById("javascriptCode");
+const toggleCodeButton = document.getElementById("toggleCodeButton"); // Add a button or link
+
+toggleCodeButton.addEventListener("click", () => {
+    javascriptCode.classList.toggle("hidden");
+});
+}
+
+
+
 
 
 function handleNextButton(){
