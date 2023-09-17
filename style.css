@@ -69,7 +69,7 @@ body {
   font-weight: 600;
 }
 
-.btn {
+.btn .end {
   background: white;
   color: black;
   font-weight: 500;
@@ -186,4 +186,28 @@ label {
   margin: 10px 0;
   text-align: center;
   border-radius: 4px;
+}
+
+.Sbtn {
+  background-color: rgb(149, 91, 241);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#username {
+  background:rgb(255, 255, 255);
+  font-weight: 500;
+  width: 150px;
+  border: solid;
+  border-color: rgb(149, 91, 241);
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+ 
 }

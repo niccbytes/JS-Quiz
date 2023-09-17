@@ -4,8 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  it works 
+  <div class="app">
+    <div id="end" class="flex-center flex-column">
+      <h1 id="finalscore">0</h1>
+      <form>
+        <input type="text" name="username" id="username" placeholder="username">
+        <button class="Sbtn" id="submit" onclick="saveHighScore(event)">Submit</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
