@@ -51,7 +51,7 @@ const nextButton = document.getElementById("nextbtn");
 //for timer and start button
 let timeLeft = document.querySelector(".time-left");
 let countdown; //declaring the varaible for the timer
-let highScores = JSON.parse(localStorage.getItem("highScores")) || []; //for the highscores
+
 
 
 
@@ -162,14 +162,6 @@ function decrementTimer(amount) {
 function showScore(){
   resetState();
   questionsElement.innerHTML = `Your got ${score} out of ${questions.length}! `;
-
-  if (initials) {
-    const userScore = { initials, score };
-    highScores.push(userScore);
-    localStorage.setItem("highScores", JSON.stringify(highScores));
-    displayHighScores();
-  }
-
   nextButton.innerHTML = "play again?";
   nextButton.style.display = "block";
   
@@ -177,22 +169,6 @@ clearTimeout(countdown);
   
 }
 
-function displayHighScores() {
-  // Sort high scores by score in descending order
-  highScores.sort((a, b) => b.score - a.score);
-
-  const highScoresList = document.getElementById("highScoresList");
-  highScoresList.innerHTML = "";
-
-  for (let i = 0; i < highScores.length; i++) {
-    const listItem = document.createElement("li");
-    listItem.innerText = `${highScores[i].initials}: ${highScores[i].score}`;
-    highScoresList.appendChild(listItem);
-  }
-
-  const highScoresDiv = document.getElementById("highScores");
-  highScoresDiv.style.display = "block"; // Show the high scores
-}
 
 
 
@@ -215,5 +191,5 @@ function handleNextButton(){
    })
 
 
-    displayHighScores();
+
    startQuiz();
