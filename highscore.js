@@ -30,7 +30,7 @@ function saveHighScore(e) {
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
 
-  // Redirect to another page (change the URL as needed)
+  
   window.location.href = "index.html";
 }
 
