@@ -211,3 +211,9 @@ label {
   border-radius: 4px;
  
 }
+
+#highScoresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

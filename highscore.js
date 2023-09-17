@@ -2,37 +2,42 @@ const userName = document.getElementById("username");
 const submit = document.getElementById("submit");
 const mostRecentScore = localStorage.getItem("mostRecentScore");
 const finalscore = document.getElementById("finalscore");
-finalscore.innerText = mostRecentScore
+finalscore.innerText = mostRecentScore;
 
-const maxhighscores = 5;
+const maxHighScores = 5;
 
+const highScoresList = document.getElementById("highScoresList");
 
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-console.log(highScores)
-
-
 
 userName.addEventListener('keyup', () => {
-  console.log(userName.value);
-  submit.disabled = !username.value;
+  submit.disabled = !userName.value;
 });
 
-saveHighScore = (e) => {
- e.preventDefault()
-  
- const highScores = {
-  score: mostRecentScore,
-  name: userName.value
+submit.addEventListener('click', saveHighScore);
+
+function saveHighScore(e) {
+  e.preventDefault();
+
+  const newHighScore = {
+    score: mostRecentScore,
+    name: userName.value
+  };
+
+  highScores.push(newHighScore);
+  highScores.sort((a, b) => b.score - a.score);
+  highScores.splice(maxHighScores);
+
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+  // Redirect to another page (change the URL as needed)
+  window.location.href = "index.html";
 }
-  
-};
 
-highScores.push(highScorescore);
+function displayHighScores() {
+  highScoresList.innerHTML = highScores.map(score => {
+    return `<li class="high-score">${score.name} - ${score.score}</li>`;
+  }).join("");
+}
 
-highScores.sort( (a,b) => b.score - a.score);
-
-highScores.splice(5);
-
-localStorage.setItem("highScores", JSON.stringify(highScores));
- 
-window.location.assign("/")
+displayHighScores();
