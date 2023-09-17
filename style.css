@@ -136,42 +136,54 @@ padding: 10px 10px;
 }
 
 body {
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .quiz {
-  display: none;
+    display: none;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 #highScores {
-  text-align: center;
+    text-align: center;
 }
 
 #highScoresList {
-  font-size: 18px;
-  margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 label {
-  font-size: 18px;
-  margin-right: 10px;
+    font-size: 18px;
+    margin-right: 10px;
 }
 
 #initials {
-  width: 50px;
-  font-size: 16px;
-  text-transform: uppercase;
+    width: 50px;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 #submitScore {
-  font-size: 16px;
-  padding: 5px 10px;
-  background-color: #4CAF50;
-  color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#Highscores {
+  background-color: rgb(149, 91, 241);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  width: 100%;
   border: none;
-  cursor: pointer;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 4px;
 }
