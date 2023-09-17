@@ -164,7 +164,7 @@ function showScore(){
   questionsElement.innerHTML = `Your got ${score} out of ${questions.length}! `;
   nextButton.innerHTML = "play again?";
   nextButton.style.display = "block";
-  
+  localStorage.setItem("mostRecentScore", score); //for highscore
 clearTimeout(countdown);
   
 }

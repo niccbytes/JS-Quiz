@@ -9,12 +9,13 @@
 <body>
   <div class="app">
     <div id="end" class="flex-center flex-column">
-      <h1 id="finalscore">0</h1>
+      <h1 id="finalscore"></h1>
       <form>
         <input type="text" name="username" id="username" placeholder="username">
-        <button class="Sbtn" id="submit" onclick="saveHighScore(event)">Submit</button>
+        <button class="Sbtn" id="submit" onclick="saveHighScore(event)" disabled>Submit</button>
       </form>
     </div>
   </div>
+  <script src="highscore.js"></script>
 </body>
 </html>

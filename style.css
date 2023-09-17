@@ -69,7 +69,7 @@ body {
   font-weight: 600;
 }
 
-.btn .end {
+.btn, .end {
   background: white;
   color: black;
   font-weight: 500;
