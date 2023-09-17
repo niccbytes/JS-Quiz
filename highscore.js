@@ -35,6 +35,8 @@ function saveHighScore(e) {
 }
 
 function displayHighScores() {
+highScoresList.innerHTML = '';
+
   highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score">${score.name} - ${score.score}</li>`;
   }).join("");
